@@ -27,8 +27,8 @@ Book Reader App is a web application built using Next.js that allows users to up
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/book-reader-app.git
-   cd book-reader-app
+   git clone https://github.com/rajtilak01/The_book_shelf.git
+   cd The_book_shelf
    ```
 2. Install dependencies:
    ```bash
