@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Book Reader App
 
-## Getting Started
+## Overview
+Book Reader App is a web application built using Next.js that allows users to upload and read books in PDF format. It uses NextAuth for authentication and AWS for cloud storage, ensuring secure access to user-uploaded content.
 
-First, run the development server:
+## Features
+- **User Authentication**: Secure sign-in and sign-out using NextAuth.
+- **Book Upload**: Users can upload books (PDF format) to AWS storage.
+- **Book Reading**: Read books directly within the app using an embedded PDF viewer.
+- **Responsive UI**: Optimized for different screen sizes and devices.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
+- **Frontend**: Next.js (React-based framework)
+- **Authentication**: NextAuth.js
+- **Storage**: AWS S3 (for PDF file storage)
+- **Database**: PostgreSQL (for user data and book metadata)
+- **Backend**: Next.js API routes
+- **Deployment**: Vercel / AWS (Optional)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
+### Prerequisites
+- Node.js (v18+ recommended)
+- PostgreSQL database (local or cloud-based)
+- AWS S3 bucket for file storage
+- Environment variables configured (see below)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/rajtilak01/The_book_shelf.git
+   cd The_book_shelf
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up the `.env.local` file with the required environment variables:
+   ```env
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your_secret_key
+   DATABASE_URL=your_postgresql_connection_string
+   AWS_ACCESS_KEY_ID=your_aws_access_key
+   AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+   AWS_BUCKET_NAME=your_s3_bucket_name
+   ```
+4. Run database migrations (if using Prisma):
+   ```bash
+   npx prisma migrate dev
+   ```
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+6. Open `http://localhost:3000` in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
+- Sign up or log in using your preferred authentication method.
+- Upload a PDF file, which gets stored securely in AWS S3.
+- Click on an uploaded book to open and read it within the app.
 
-## Learn More
+## Deployment
+### Vercel (Recommended)
+- Deploy to Vercel by running:
+  ```bash
+  vercel
+  ```
+- Set up environment variables in the Vercel dashboard.
 
-To learn more about Next.js, take a look at the following resources:
+### AWS EC2 / Other Servers
+- Build the project:
+  ```bash
+  npm run build
+  ```
+- Start the production server:
+  ```bash
+  npm start
+  ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit changes and push:
+   ```bash
+   git commit -m "Added new feature"
+   git push origin feature-name
+   ```
+4. Create a pull request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
+This project is licensed under the MIT License.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Happy coding! 🚀
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
