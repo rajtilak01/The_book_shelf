@@ -1,4 +1,4 @@
-# Book Reader App
+# Book Shelf App
 
 ## Overview
 Book Reader App is a web application built using Next.js that allows users to upload and read books in PDF format. It uses NextAuth for authentication and AWS for cloud storage, ensuring secure access to user-uploaded content.
