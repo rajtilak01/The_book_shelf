@@ -6,7 +6,7 @@ import { BookOpen, Upload, Users, Star } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { motion } from "framer-motion"
-import { AnimatedButton } from "@/components/ui/animated-button"
+import { AnimatedButton } from "@/components/ui/animated-button" // Ensure this file exists at the specified path
 import { AnimatedText } from "@/components/ui/animated-text"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { PageTransition } from "@/components/ui/page-transition"
